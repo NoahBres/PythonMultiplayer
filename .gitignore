@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Pipenv
+.Pipfile.lock
+
+# Personal vscode settings
+.vscode/settings.json
