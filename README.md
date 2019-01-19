@@ -38,3 +38,18 @@ _To launch client_:
 ## Demo
 
 ![](assets/demo.gif)
+
+## Source explanation
+
+`client` - contains all the client code
+`server` - contains all the server code
+
+`server/server.py` - Starts TCP and UDP server threads
+`server/tcp_server.py` - TCP Server handles important events that shouldn't be dropped. Does client registration and sends a client list to the rest of the clients.
+`server/udp_server.py` - UDP Server handles sockets to clients. Currently just gets move commands from the client to update the client positions.
+`server/client.py` - Client object. Contains the udp address and id of the client. Contains `send_tcp` and `send_udp` functions to send messages to each client.
+
+`client/client.py` - Handles communication with the server. Had a socket thread to udp messages. Handles registrations and message sending.
+`client/network_entity.py` - Tracks other clients connected to the server
+`client/game.py` - Game part to display the clients
+`client/player.py` - Simple game object to handle drawing/updating
