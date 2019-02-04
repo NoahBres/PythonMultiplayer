@@ -114,8 +114,9 @@ class Game:
                 if message["identifier"] in self.clients.keys():
                     for m in message["message"]:
                         if m[0] == "move":
-                            self.clients[message["identifier"]].move(m[1][0], m[1][1])
-
+                            # self.clients[message["identifier"]].move(m[1][0], m[1][1])
+                            self.clients[message["identifier"]].x = m[1][0]
+                            self.clients[message["identifier"]].y = m[1][1]
                 print(message)
 
     def draw(self, screen):
